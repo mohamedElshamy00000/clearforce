@@ -1,0 +1,297 @@
+/*
+* demo.css
+* File include item demo only specific css only
+******************************************************************************/
+
+.light-style .menu .app-brand.demo {
+  height: 64px;
+}
+
+.dark-style .menu .app-brand.demo {
+  height: 64px;
+}
+.bglight{
+  background: #F8F7FA !important
+}
+.app-brand-logo.demo {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -ms-flexbox;
+  display: flex;
+  width: 34px;
+  height: 35px;
+}
+
+.app-brand-logo.demo svg {
+  width: 35px;
+  height: 35px;
+}
+
+.app-brand-text.demo {
+  font-size: 1.375rem;
+}
+
+/* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+  padding-top: 64px !important;
+}
+.layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
+  padding-top: 78px !important;
+}
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+  z-index: auto;
+}
+
+/*
+* Content
+******************************************************************************/
+
+.demo-blocks > * {
+  display: block !important;
+}
+
+.demo-inline-spacing > * {
+  margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing > * {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+.demo-vertical-spacing.demo-only-element > :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg > * {
+  margin-top: 1.875rem !important;
+  margin-bottom: 0 !important;
+}
+.demo-vertical-spacing-lg.demo-only-element > :first-child {
+  margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl > * {
+  margin-top: 5rem !important;
+  margin-bottom: 0 !important;
+}
+.demo-vertical-spacing-xl.demo-only-element > :first-child {
+  margin-top: 0 !important;
+}
+
+.rtl-only {
+  display: none !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+[dir='rtl'] .rtl-only {
+  display: block !important;
+}
+
+/*
+* Layout demo
+******************************************************************************/
+
+.layout-demo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.layout-demo-placeholder img {
+  width: 900px;
+}
+.layout-demo-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* datatable */
+
+.dataTables_wrapper{
+  padding: 20px;
+}
+.dataTables_filter{
+  /* display: inline-block; */
+  margin-top: 0 !important;
+  float: right;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #333333;
+  border-color: #333333;
+}
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.page-item.active .page-link, .pagination li.active > a:not(.page-link) {
+  border-color: #333333;
+  background-color: #333333;
+  color: #fff;
+}
+.page-item.active .page-link, .pagination li.active > a:not(.page-link) {
+  border-color: #000000;
+  background-color: #000000;
+  color: #fff;
+}
+
+div.dataTables_wrapper div.dataTables_paginate{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.dt-buttons{
+  /* position: absolute; */
+}
+/* div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter {
+  position: absolute;
+  right: 19px;
+  top: 19px;
+} */
+
+.bs-stepper .bs-stepper-header .step .step-trigger .bs-stepper-label .bs-stepper-subtitle{
+  max-width: 140px !important;
+  white-space: initial !important;
+}
+
+.menu-d-flex{
+  margin-left: 0px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.iconB{
+  width: 80px;
+  height: 80px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  margin: 9px auto;
+  border-radius: 13px;
+}
+
+.fileBox{
+  padding: 10px 14px;
+  background: #F6F9FF;
+  border-radius: 10px;
+}
+.page-loading{
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 63px;
+  display: flex;
+  justify-content: center;
+  background: #0000004a;
+  left: 0;
+  align-items: center;
+  color: #FFF;
+}
+
+.border-success{
+  border: 2px solid green ;
+}
+.border-info{
+  border: 2px solid rgb(48, 48, 48) ;
+}
+.border-light{
+  border: 2px solid rgb(22, 22, 22) ;
+}
+
+.select2-container--default, .select2-container--default *{
+  z-index: 500;
+}
+.userBox{
+  margin-bottom: 7px;
+  padding: 14px 20px;
+  background: #A4A1AC17;
+  border-radius: 7px;
+}
+
+.invalid-feedback {
+  display: block !important;
+}
+
+.dash-header{
+  background: #FFF;
+  padding: 13px 13px 13px 13px !important;
+  border-radius: 9px;
+  margin-top: 5px;
+}
+@media (max-width: 576px) { 
+  .card{
+    margin-bottom: 1em;
+  }
+
+  html[lang="ar"] .invites_filter {
+    display: flex !important;
+    position: absolute !important;
+    left: 18px !important;
+    right: unset !important;
+  }
+  .btn-group, .btn-group-vertical{
+    display: none !important;
+  }
+}
+
+[dir=rtl] div.dataTables_wrapper div.dataTables_paginate{
+  position: absolute;
+  right: unset;
+  left: 20px;
+  bottom: 20px;
+}
+
+body{
+  background: #FFF !important
+}
+
+#payoutShowModal .btn.disaple{
+  display: none !important;
+}
+
+.scrollable-container{
+  overflow: scroll !important;
+}
+
+
+[dir="rtl"] div.dataTables_wrapper .dataTables_filter {
+  top: 19px !important;
+}
+
+.alertCard{
+  background-image: url('../../../frontend/assets/images/gradient/a-blur.png'),url('../../../frontend/assets/images/gradient/a.png');
+  /* background-size: 1770px,contain;
+  background-position: center 70%;
+  background-repeat: no-repeat,repeat no-repeat; */
+  background-size: 2062px,auto;
+  background-position: center 72%;
+  background-repeat: no-repeat,repeat no-repeat;
+  
+}
+.alertCard p{
+  color: #2f2f2f;
+  font-size: 18px;
+}
+.cardbg{
+  background-image: url("../../../frontend/assets/images/gradient/a-blur.png");
+  background-size: 1770px,cover;
+  background-position: center 40%;
+  background-repeat: no-repeat,repeat no-repeat;
+}
