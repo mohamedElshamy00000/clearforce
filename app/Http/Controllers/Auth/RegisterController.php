@@ -76,7 +76,7 @@ class RegisterController extends Controller
             'phone'    => ['required', 'numeric', 'unique:users'],
             'country'  => ['nullable', 'string'],
             'company'  => ['nullable', 'string'],
-            'industry' => ['required', 'string'],
+            'industry' => ['nullable', 'string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }

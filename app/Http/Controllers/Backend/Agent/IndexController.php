@@ -61,8 +61,8 @@ class IndexController extends Controller
     public function download($filename)
     {
         $file = public_path(). "/assets/files/verification/" . $filename;
-        $headers = array('Content-Type: application/pdf',);
-        return Response::download($file, $filename,$headers);
+        // $headers = array('Content-Type: application/pdf',);
+        return Response::download($file, $filename);
     }
 
     // store credit/debit transaction

@@ -91,10 +91,10 @@
     </div><!-- .nk-header-main -->
 
     @if(Route::is('home') )
-    <div class="nk-hero pt-xl-5">
+    <div class="nk-hero pt-xl-5 overflow-hidden">
         <div class="container">
             <div class="row justify-content-center text-center">
-                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                <div class="col-lg-11 col-xl-11 col-xxl-11">
                     <div class="nk-hero-content py-5 py-lg-6">
                         <h1 class="title mb-3 mb-lg-4">{{ __('general.site_description') }}</h1>
                         <p class="lead px-md-8 px-lg-6 mb-4 mb-lg-5">{{ __('general.site_sub_description') }}</p>
@@ -104,7 +104,7 @@
                         <!-- <p class="sub-text mt-2">No credit card required</p> -->
                     </div>
                     <div class="nk-hero-gfx">
-                        <img class="w-100 rounded-top-4" src="{{ asset('frontend/assets/images/mainimg.png') }}" alt="clearforce">
+                        <img class="w-100 shadow rounded-top-4" src="{{ asset('frontend/assets/images/mainimg.png') }}" alt="clearforce">
                     </div>
                 </div>
             </div>

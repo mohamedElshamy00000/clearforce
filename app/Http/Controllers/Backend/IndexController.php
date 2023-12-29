@@ -16,6 +16,7 @@ use App\Models\VerificationCenter;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Validator;
@@ -53,8 +54,14 @@ class IndexController extends Controller
     {
         $file = public_path(). "/assets/files/projects/" . $filename;
         if ($file) {
-            $headers = array('Content-Type: application/pdf',);
-            return Response::download($file, $filename,$headers);
+            $ex = File::extension($file);
+            dd($ex);
+            // if ($ex == 'pdf') {
+            //     $headers = array('Content-Type: application/pdf',);
+            // } elseif($ex == 'jpeg' || $ex == 'png'){
+            //     $headers = array('Content-Type: image/jpeg');
+            // } 
+            return Response::download($file);
             
         } else {
             return redirect()->back()->with([
@@ -68,8 +75,9 @@ class IndexController extends Controller
         $file = public_path(). "/assets/files/" . $path .'/'. $filename;
 
         if ($file) {
-            $headers = array('Content-Type: application/pdf',);
-            return Response::download($file, $filename,$headers);                
+            // $headers = array('Content-Type: application/pdf',);
+            // return Response::download($file, $filename,$headers);                
+            return Response::download($file);                
         } else {
             return redirect()->back()->with([
                 'message' => 'File not found',

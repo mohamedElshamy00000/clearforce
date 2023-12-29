@@ -67,7 +67,7 @@ class ProductTypeTableSeeder extends Seeder
         // $project->hscodes()->sync($HsCode->id);
 
         $FileType1  = ProductFileType::create(['name_en' => 'Bill of lading','name_ar' => 'بوليصة الشحن']);
-        $FileType2  = ProductFileType::create(['name_en' => 'Commercial invoice','name_ar' => 'الفاتورة التجارية ']);
+        $FileType2  = ProductFileType::create(['name_en' => 'Commercial invoice','name_ar' => 'الفاتورة التجارية']);
         $FileType3  = ProductFileType::create(['name_en' => 'Certificate of Origin','name_ar' => 'شهادة المنشأ']);
         $FileType4  = ProductFileType::create(['name_en' => 'Saber certificate','name_ar' => 'شهادة سابر']);
         $FileType5  = ProductFileType::create(['name_en' => 'Food and Drug Administration request','name_ar' => 'طلب هيئة الغذاء و الدواء']);

@@ -120,11 +120,20 @@ class ProjectsController extends Controller
                     return '<span class="badge bg-label-danger ms-auto ">rejected</span>';
                 }
             })
+            ->addColumn('payemnt', function($row){
+                if ($row->status >= 1) {
+                    if($row->Invoice()->first()->status == 1){
+                        return '<span class="badge bg-label-success ms-auto ">paid</span>';
+                    } elseif($row->Invoice()->first()->status == 0){
+                        return '<span class="badge bg-label-danger ms-auto ">unpaid</span>';
+                    }
+                }
+            })
             ->addColumn('action', function($row){
-                $actionBtn = '<a href="' . route('admin.project.single' ,$row->uuid) . '" class="edit btn btn-outline-dark waves-effect btn-sm ">Show</a> ';
+                $actionBtn = '<a href="' . route('admin.project.single' ,$row->uuid) . '" class="edit btn btn-outline-dark waves-effect btn-sm "><i class="fa fa-eye"></i></a> ';
                 return $actionBtn;
             })
-            ->rawColumns(['client', 'milestones', 'Proposals', 'status', 'payment_mode','action', 'created_at', 'needShiping'])
+            ->rawColumns(['client', 'milestones', 'payemnt','Proposals', 'status', 'payment_mode','action', 'created_at', 'needShiping'])
             ->make(true);
     }
     

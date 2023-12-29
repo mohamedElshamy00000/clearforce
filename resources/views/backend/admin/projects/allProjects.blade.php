@@ -80,7 +80,7 @@
                     <th>Budget</th>
                     <th>Proposals</th>
                     <th>Shipping</th>
-                    {{-- <th>milestones</th> --}}
+                    <th>payment</th>
                     <th>date</th>
                     <th>status</th>
                     <th>Action</th>
@@ -111,7 +111,7 @@
                 {data: 'Budget', name: 'Budget'},
                 {data: 'Proposals', name: 'Proposals'},
                 {data: 'needShiping', name: 'needShiping'},
-                // {data: 'milestones', name: 'milestones'},
+                {data: 'payemnt', name: 'payemnt'},
                 {data: 'created_at', name: 'created_at'},
                 {
                     data: 'status', 

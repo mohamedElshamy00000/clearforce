@@ -194,24 +194,33 @@
                 <ul class="list-unstyled mb-0">
                     @forelse ($project->files as $file)
                     <li class="mb-2">
-                        <a href="{{ route('file.download', $file->file_name) }}" class="d-flex align-items-center btn btn-outline-dark waves-effect ">
-                            <i class="ti ti-file me-2"></i> 
-
+                        <div class="d-flex align-items-center btn btn-outline-dark waves-effect ">
+                            @if (File::extension('assets/files/projects/'. $file->file_name) != 'pdf')
+                            <i class="fa fa-file me-3 fs-4"></i> 
+                            @else
+                            <i class="fa fa-file-pdf me-3 fs-4"></i> 
+                            @endif
                             <div class="text-start me-2">
-                                @if (App::isLocale('ar'))
-                                    <h6 class="text-dark mb-0">{{ $file->fileType->name_ar }}</h5>
-                                @else
-                                    <h6 class="text-dark mb-0">{{ $file->fileType->name_en }}</h5>
-                                @endif 
+                                <h6 class="text-dark mb-0">{{ $file->fileType->name_en }}</h5>
                                 <h6 class="mb-0 text-muted">{{ substr($file->file_name, 0, -20) }}...{{ substr($file->file_name, -3, 3) }}</h6>
                             </div>
-                            <div class="ms-auto">
-                                <span class="btn btn-label-dark btn-icon btn-sm">
-                                    <i class="ti ti-arrow-down ti-xs"></i>
-                                </span>
-                            </div>
-                        </a>
+                            @if (File::extension('assets/files/projects/'. $file->file_name) != 'pdf')
+                                <a href="{{ asset('assets/files/projects/'. $file->file_name) }}" target="_blank" class="ms-auto">
+                                    <span class="btn btn-label-dark btn-icon btn-sm">
+                                        <i class="ti ti-eye ti-xs"></i>
+                                    </span>
+                                </a>
+                            @else
+                                <a href="{{ route('file.download', $file->file_name) }}" class="ms-auto">
+                                    <span class="btn btn-label-dark btn-icon btn-sm">
+                                        <i class="ti ti-arrow-down ti-xs"></i>
+                                    </span>
+                                </a>
+                            @endif
+                            
+                        </div>
                     </li>
+                    
                     @empty
                     <li class="mb-3 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -222,8 +231,6 @@
                         </svg>
                     </li>
                     @endforelse
-                    
-        
                 </ul>
             </div>
         
